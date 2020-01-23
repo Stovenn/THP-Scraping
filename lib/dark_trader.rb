@@ -18,7 +18,7 @@ end
 def values_table(page)
   currency_value = []
   page.xpath('//*[@id="__next"]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div[3]/div/table/tbody/tr/td[5]').each do |value|
-  currency_value << value.text
+  currency_value << value.text.delete("$").to_f
   end
   return currency_value
 end

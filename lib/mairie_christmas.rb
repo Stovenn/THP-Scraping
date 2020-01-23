@@ -23,7 +23,7 @@ def array_of_names (city_url)
   names = []
   city_url.each{|url| 
     page = Nokogiri::HTML(open("#{url}"))
-    names << page.xpath("/html/body/div/main/section[1]/div/div/div/p[1]/strong[1]/a").text
+    names << page.xpath("/html/body/div/main/section[1]/div/div/div/p[1]/strong[1]/a").text.capitalize
 }
   return names
 end
